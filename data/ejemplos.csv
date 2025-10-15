@@ -1,0 +1,21 @@
+# Ejemplos para Viga, Cercha y Cable
+# Unidades: L[m], P[kN], a[m], w[kN/m], M[kN·m], nodo, x[m], y[m], tipo_apoyo, barra, f_obj[m], H[kN]
+
+# VIGA
+Tipo, L, Cargas_puntuales, Cargas_distribuidas, Momentos, Peso_propio
+Viga, 6, "[(10,2),(5,4)]", "[(0,3,5,uniforme);(3,6,2*x+1,triangular)]", "[(8,0)]", True
+Viga, 8, "[(12,3)]", "[(0,8,3,uniforme)]", "[]", False
+Viga, 5, "[]", "[(0,5,4,uniforme)]", "[]", True
+
+# CERCHA
+Tipo, Nodos, Barras, Apoyos, Cargas_nodales
+Cercha, "[('A',0,0),('B',4,0),('C',2,3)]", "[('AB','A','B'),('AC','A','C'),('BC','B','C')]", "[('A','pasador'),('B','rodillo')]", "[('C',0,-10)]"
+Cercha, "[('A',0,0),('B',3,0),('C',6,0),('D',1.5,2),('E',4.5,2)]", "[('AB','A','B'),('BC','B','C'),('AD','A','D'),('BE','B','E'),('DE','D','E'),('EC','E','C'),('DB','D','B'),('EB','E','B')]", "[('A','pasador'),('C','rodillo')]", "[('D',0,-8),('E',0,-8)]"
+
+# CABLE
+Tipo, L, delta_h, w, f_obj, H
+Cable, 20, 0, 1.2, 2.5, 
+Cable, 30, 2, 1.0, , 20
+Cable, 15, -1, 0.8, 1.8, 
+Cable, 25, 0, 1.5, , 18
+Cable, 18, 1, 1.1, 2.0, 
